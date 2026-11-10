@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ตำนานเจ็ดอัญมณีแห่งสเปกตรัม</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&family=Prompt:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff0f6;--bg2:#ffe1ee;--card:#fffafc;--line:#f3b9d1;--text:#4a2338;--mute:#8a5a74;--gold:#c2377a;--yes:#9ae0bb;--no:#d63f5f;--unk:#d8cbe3;--acc:#d6407f}
+*{box-sizing:border-box}
+body{margin:0;font-family:Sarabun,"Noto Sans Thai",Tahoma,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#ffd3e6 0,transparent 60%),var(--bg);color:var(--text);line-height:1.6}
+header{padding:28px 16px 12px;text-align:center}
+h1{font-family:Prompt,Sarabun,sans-serif;font-size:clamp(1.5rem,4vw,2.3rem);margin:0;color:var(--gold);letter-spacing:.5px}
+.sub{color:var(--mute);margin:.3rem 0 0}
+.gems{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.gems i{width:14px;height:14px;transform:rotate(45deg);border-radius:3px;display:block}
+nav{position:sticky;top:0;z-index:5;background:rgba(255,240,246,.93);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav button{flex:none;background:transparent;color:var(--mute);border:1px solid transparent;border-radius:999px;padding:8px 16px;font:600 .95rem Sarabun,sans-serif;cursor:pointer}
+nav button[aria-selected=true]{background:var(--acc);color:#fff}
+main{max-width:1060px;margin:0 auto;padding:16px}
+section{display:none}section.on{display:block}
+h2{font-family:Prompt,Sarabun,sans-serif;color:var(--gold);margin:1.2rem 0 .5rem;font-size:1.35rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+button.b{background:var(--acc);color:#fff;border:0;border-radius:12px;padding:10px 16px;font:700 1rem Sarabun,sans-serif;cursor:pointer}
+button.b:hover{filter:brightness(1.12)}button.b.alt{background:#f8c9dd;color:#4a2338}button.b.ok{background:var(--yes);color:#0f3a24}button.b.bad{background:var(--no)}
+button.b:disabled{opacity:.4;cursor:not-allowed}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--bg2);color:var(--gold)}
+td.c{text-align:center;font-weight:700}
+.Y{color:#0f3a24;background:var(--yes)}.N{color:#5a1a2c;background:#f8b9c9}.U{color:#4a2338;background:var(--unk)}
+.wrap{overflow-x:auto}
+.big{font-family:Prompt,Sarabun,sans-serif;font-size:2.4rem;font-weight:700;text-align:center;padding:14px;border-radius:14px}
+.timer{font:700 3.6rem Prompt,sans-serif;text-align:center;color:var(--gold)}
+.timer.low{color:var(--no)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--bg2);color:var(--mute);cursor:pointer;font:600 .85rem Sarabun}
+.chip.on{background:var(--gold);color:#fff}
+.qbtn{display:block;width:100%;text-align:left;background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:6px 0;cursor:pointer;font:inherit}
+.qbtn:hover,.qbtn.sel{border-color:var(--gold)}
+.qbtn b{color:var(--gold);margin-right:6px}
+.mute{color:var(--mute)}.warn{border-left:4px solid var(--gold);padding-left:12px}
+input,select{background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit}
+.hidden{filter:blur(9px);user-select:none}
+ol li,ul li{margin:.25rem 0}
+.pts{font:700 1.4rem Prompt,sans-serif;color:var(--gold)}
+@media print{body{background:#fff;color:#000}nav,header .gems,.noprint{display:none}section{display:block!important}.card{background:#fff;border-color:#999}th{background:#eee;color:#000}h1,h2{color:#000}.Y{background:#cfeedd;color:#000}.N{background:#f4d6d9;color:#000}.U{background:#e3e3ea;color:#000}}
+</style>
+</head>
+<body>
+<header>
+  <h1>ตำนานเจ็ดอัญมณีแห่งสเปกตรัม</h1>
+  <p class="sub">เกมทายตัวตนคลื่นแม่เหล็กไฟฟ้า · ทบทวนท้ายคาบ 10 นาที · ฟิสิกส์ ม.6</p>
+  <div class="gems" aria-hidden="true">
+    <i style="background:#f08aa0"></i><i style="background:#f0883e"></i><i style="background:#c0392b"></i><i style="background:#5ad06c"></i><i style="background:#8b6cff"></i><i style="background:#4aa3ff"></i><i style="background:#e6e6ff"></i>
+  </div>
+</header>
+<nav role="tablist" id="tabs"></nav>
+<main>
+
+<section id="s-rules">
+  <h2>เรื่องราว</h2>
+  <div class="card">ในอาณาจักรสเปกตรัม ผู้พิทักษ์ทั้งเจ็ดปลอมตัวเป็นเงาลึกลับ นักสืบสเปกตรัมต้องซักถาม "ผู้พยากรณ์" เพื่อเปิดโปงว่าเงานั้นคือใคร ผู้พยากรณ์ตอบได้เพียง <b>"ใช่"</b> <b>"ไม่ใช่"</b> หรือ <b>"ข้อมูลไม่เพียงพอ"</b> (ม่านหมอกบังตา)</div>
+  <div class="grid">
+    <div class="card"><h2 style="margin-top:0">บทบาท (ทีมละ 4–5 คน)</h2><ul>
+      <li><b>ผู้พยากรณ์ 1 คน:</b> จับสลากเลข 1–7 แบบลับ แล้วตอบจากตารางเฉลย (ใช้แท็บ "ผู้พยากรณ์")</li>
+      <li><b>นักสืบ 3–4 คน:</b> ช่วยกันตั้งคำถามและตัดสินใจทาย มีคนจดจำนวนคำถาม</li>
+      <li><b>ครู:</b> ชี้ขาดเมื่อมีข้อโต้แย้ง</li></ul></div>
+    <div class="card"><h2 style="margin-top:0">ตารางเวลา 10 นาที</h2><table>
+      <tr><th>นาที</th><th>กิจกรรม</th></tr>
+      <tr><td>0:00–1:00</td><td>เล่าฉาก จัดทีม จับสลาก อ่านกติกา</td></tr>
+      <tr><td>1:00–4:00</td><td>รอบที่ 1 (ไม่เกิน 3 นาที)</td></tr>
+      <tr><td>4:00–4:30</td><td>สลับผู้พยากรณ์ จับสลากใหม่</td></tr>
+      <tr><td>4:30–7:30</td><td>รอบที่ 2 (ไม่เกิน 3 นาที)</td></tr>
+      <tr><td>7:30–10:00</td><td>เฉลยรวม คำถามสะท้อนคิด ประกาศผล</td></tr></table></div>
+  </div>
+  <h2>กติกา</h2>
+  <div class="card"><ol>
+    <li><b>เวลา:</b> แต่ละรอบไม่เกิน 3 นาที หมดเวลาโดยยังไม่มีใครทายถูก ได้ 0 คะแนน และเฉลย</li>
+    <li><b>จำนวนคำถาม:</b> ถามได้สูงสุด 10 ข้อต่อรอบ การทายไม่นับเป็นคำถาม</li>
+    <li><b>คำตอบ:</b> "ใช่" "ไม่ใช่" หรือ "ข้อมูลไม่เพียงพอ" ทุกข้อที่ถามนับ 1 ข้อ แม้คำตอบคือ "ข้อมูลไม่เพียงพอ"</li>
+    <li><b>หัวข้อที่ถามได้:</b> สมบัติคลื่น ความถี่ ความยาวคลื่น พลังงาน แหล่งกำเนิด การประยุกต์ใช้</li>
+    <li><b>ข้อห้าม:</b> ห้ามถามชื่อโดยตรง ("คุณคือรังสีเอกซ์ไหม") และห้ามใช้ชื่อเครื่องมือที่มีชื่อคลื่นอยู่ในชื่อ ("คุณใช้ในเตาไมโครเวฟไหม") ชื่อคลื่นใช้เป็นจุดเปรียบเทียบได้ เช่น "ความถี่สูงกว่าแสงที่ตามองเห็นไหม" ถามผิดข้อห้าม ผู้พยากรณ์ไม่ตอบแต่นับเป็น 1 ข้อ</li>
+    <li><b>การทาย:</b> ทายได้ไม่เกิน 2 ครั้งต่อรอบ ทีมต้องตกลงกันก่อนทาย</li>
+    <li><b>คะแนน</b> (นับจากจำนวนคำถามที่ใช้ไป ณ ตอนที่ทายถูก):
+      <table style="max-width:360px;margin-top:6px"><tr><th>ทายถูกเมื่อใช้คำถาม</th><th>คะแนน</th></tr><tr><td>ภายใน 5 ข้อ</td><td>10</td></tr><tr><td>6–8 ข้อ</td><td>7</td></tr><tr><td>9–10 ข้อ</td><td>5</td></tr></table></li>
+    <li><b>ทายผิดทั้ง 2 ครั้ง:</b> จบรอบ 0 คะแนน ครูเฉลยพร้อมคำอธิบาย</li>
+    <li><b>ความถูกต้อง:</b> ผู้พยากรณ์ตอบตามตารางและเกณฑ์อ้างอิงเท่านั้น ถ้าไม่แน่ใจให้ตอบ "ข้อมูลไม่เพียงพอ" แล้วเรียกครูชี้ขาด</li>
+  </ol></div>
+  <h2>กลยุทธ์ที่ควรเล่าหลังเล่น</h2>
+  <div class="card"><ul>
+    <li>คำถามที่ทุกชนิดตอบเหมือนกัน (หมวด A) ไม่ให้ข้อมูลเลย เสียข้อฟรี</li>
+    <li>ถามเปรียบเทียบกับแสงที่ตามองเห็น (ข้อ 6 หรือ 7) เพื่อแบ่งสเปกตรัมเป็นสองฝั่ง แล้วตัดอีกครึ่งด้วยข้อ 9 หรือ 11 จบด้วยแหล่งกำเนิดหรือการประยุกต์ใช้</li>
+    <li>ตัวอย่าง 3 ข้อ: เอกซ์ → ข้อ 6 "ใช่" (เหลือ UV เอกซ์ แกมมา) → ข้อ 11 "ใช่" (เหลือเอกซ์ แกมมา) → ข้อ 17 "ไม่" → เอกซ์</li>
+  </ul></div>
+  <h2>ตัวเลือกปรับความยาก</h2>
+  <div class="card wrap"><table><tr><th>โหมด</th><th>วิธีปรับ</th></tr>
+    <tr><td>โหมดเข้ม</td><td>ใช้คำถามเปรียบเทียบกับชื่อคลื่นได้ไม่เกิน 2 ข้อ ที่เหลือต้องถามแหล่งกำเนิด พลังงาน หรือการประยุกต์ใช้</td></tr>
+    <tr><td>โหมดเหตุผล</td><td>ก่อนทายต้องบอกเหตุผลทางฟิสิกส์ 1 ประโยค ถูกทั้งเหตุผลและคำตอบ +2 คะแนน</td></tr>
+    <tr><td>โหมดอ่านง่าย</td><td>เขียนลำดับ วิทยุ → ไมโครเวฟ → IR → แสงที่ตามองเห็น → UV → เอกซ์ → แกมมา บนกระดาน</td></tr>
+    <tr><td>ครูเป็นผู้พยากรณ์</td><td>ไม่ต้องแจกตาราง ครูจับสลาก 1 ใบต่อรอบ ทีมผลัดกันถามทีมละ 1 ข้อ รวม 10 ข้อ ทีมที่ทายถูกได้คะแนน</td></tr></table></div>
+</section>
+
+<section id="s-oracle">
+  <div class="card warn noprint">แท็บนี้สำหรับ <b>ผู้พยากรณ์</b> เท่านั้น อย่าหันหน้าจอให้นักสืบเห็น กด "จับสลาก" แล้วแตะคำถามที่ทีมถาม เพื่อดูคำตอบ</div>
+  <div class="card">
+    <div class="row">
+      <button class="b" id="draw">จับสลาก</button>
+      <button class="b alt" id="peek" disabled>แสดง/ซ่อนชื่อคลื่น</button>
+      <span id="cardinfo" class="mute">ยังไม่ได้จับสลาก</span>
+    </div>
+    <div id="answer" class="big U" style="margin-top:12px">—</div>
+    <div id="answerwhy" class="mute" style="text-align:center"></div>
+  </div>
+  <div class="row" id="cats"></div>
+  <div class="card" id="qlist"></div>
+</section>
+
+<section id="s-play">
+  <div class="grid">
+    <div class="card">
+      <h2 style="margin-top:0">นาฬิกา 3 นาที</h2>
+      <div class="timer" id="clock">3:00</div>
+      <div class="row" style="justify-content:center">
+        <button class="b" id="tstart">เริ่ม</button>
+        <button class="b alt" id="tpause">หยุด</button>
+        <button class="b alt" id="treset">รีเซ็ต</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2 style="margin-top:0">ตัวนับรอบนี้</h2>
+      <div class="row" style="justify-content:space-between"><span>คำถามที่ใช้ (สูงสุด 10)</span>
+        <span class="row"><button class="b alt" id="qm">−</button><span class="pts" id="qn">0</span><button class="b" id="qp">+</button></span></div>
+      <div class="row" style="justify-content:space-between;margin-top:8px"><span>ทายผิดแล้ว (สูงสุด 2)</span><span class="pts" id="gn">0</span></div>
+      <div class="row" style="justify-content:space-between;margin-top:8px"><span>ถ้าทายถูกตอนนี้ได้</span><span class="pts" id="pv">10</span></div>
+      <div class="row" style="margin-top:12px">
+        <label>ทีม <select id="team"></select></label>
+        <button class="b ok" id="gok">ทายถูก</button>
+        <button class="b bad" id="gbad">ทายผิด</button>
+      </div>
+      <div class="row" style="margin-top:8px"><button class="b alt" id="rnew">เริ่มรอบใหม่</button><span id="rmsg" class="mute"></span></div>
+    </div>
+  </div>
+  <h2>คะแนนทีม</h2>
+  <div class="card wrap"><table id="score"></table>
+    <div class="row noprint" style="margin-top:8px"><button class="b alt" id="sreset">ล้างคะแนนทั้งหมด</button></div></div>
+</section>
+
+<section id="s-key">
+  <h2>ตารางเฉลยคำตอบ (พิมพ์แจกผู้พยากรณ์ได้)</h2>
+  <p class="mute">เลขสลาก: 1 UV · 2 วิทยุ · 3 แกมมา · 4 อินฟราเรด · 5 แสงที่ตามองเห็น · 6 ไมโครเวฟ · 7 รังสีเอกซ์ (ไม่พอ = ข้อมูลไม่เพียงพอ)</p>
+  <div class="card wrap"><table id="keytable"></table></div>
+</section>
+
+<section id="s-reveal">
+  <h2>เกณฑ์อ้างอิงของผู้พยากรณ์</h2>
+  <p class="mute">ค่าประมาณแบบตำราทั่วไป ขอบเขตจริงต่อเนื่องและซ้อนทับกันเล็กน้อย ใช้ตารางนี้เป็นมาตรฐานเดียวกันทุกทีม คำนวณจาก c = 3×10⁸ m/s และ E = hf</p>
+  <div class="card wrap"><table id="reftable"></table></div>
+  <p>รังสีเอกซ์กับรังสีแกมมาซ้อนทับกันในช่วงพลังงานได้ จึงแยกกันที่ต้นกำเนิด: แกมมามาจากนิวเคลียส เอกซ์มาจากอิเล็กตรอนนอกนิวเคลียส เช่น อิเล็กตรอนเร็วชนเป้าโลหะ หรือการเปลี่ยนระดับพลังงานของอิเล็กตรอนชั้นใน</p>
+  <h2>เฉลยพร้อมคำอธิบาย</h2>
+  <div class="grid" id="revcards"></div>
+  <h2>จุดที่มักถกเถียง</h2>
+  <div class="card"><ul>
+    <li><b>Wi-Fi มือถือ GPS:</b> ในนิยามกว้างของวงการโทรคมนาคม คลื่นวิทยุครอบคลุมถึงช่วงไมโครเวฟด้วย แต่เกมนี้ใช้เกณฑ์ตำราไทยทั่วไปที่แยกที่ 1 m จึงจัดเป็นไมโครเวฟ ถ้านักเรียนโต้แย้ง ให้ยกเป็นประเด็นอภิปรายว่าเกณฑ์แบ่งช่วงคลื่นเป็นข้อตกลง ไม่ใช่เส้นแบ่งที่คมชัดของธรรมชาติ</li>
+    <li><b>เอกซ์กับแกมมา:</b> ช่วงพลังงานซ้อนกันได้ จึงแยกด้วยต้นกำเนิด งานแพทย์และอุตสาหกรรมบางงานใช้ได้ทั้งสองชนิด ข้อ 32 จึงตอบ "ใช่" ทั้งคู่</li>
+    <li><b>UV กับไอออไนซ์:</b> ข้อ 14 ถาม "ทุกส่วน" (UV ตอบ ไม่) ข้อ 15 ถาม "บางส่วน" (UV ตอบ ใช่) ชวนนักเรียนสังเกตคำว่า "ทุก" กับ "บาง"</li>
+    <li><b>ดวงอาทิตย์:</b> ข้อ 20 วัดจากความเข้มต่อหน่วยความยาวคลื่น (ยอดราว 500 nm) ถ้าวัดต่อหน่วยความถี่ ยอดจะอยู่ในช่วงอินฟราเรดใกล้ จึงต้องระบุปริมาณที่ใช้วัดเสมอ</li>
+    <li><b>ความอันตราย:</b> ขึ้นกับปริมาณที่ได้รับ ไม่ใช่ชนิดคลื่นอย่างเดียว จึงตอบ "ข้อมูลไม่เพียงพอ" (ข้อ 35)</li>
+    <li><b>ขอบเขตช่วงคลื่น:</b> เป็นการแบ่งตามข้อตกลง คลื่นทุกชนิดเป็นคลื่นแม่เหล็กไฟฟ้าต่อเนื่องกัน ไม่มีรอยต่อที่คมชัดระหว่างชนิด</li>
+  </ul></div>
+  <h2>คำถามสะท้อนคิดปิดคาบ</h2>
+  <div class="card"><ol>
+    <li>ทำไมข้อ 1–5 จึงไม่ช่วยแยกคลื่น (ทุกชนิดเป็นคลื่นแม่เหล็กไฟฟ้า ต่างกันที่ f และ λ)</li>
+    <li>ข้อ 7 กับข้อ 8 ตอบเหมือนกันเพราะอะไร (λ = c/f และ E = hf)</li>
+    <li>ทำไม UV ตอบ "ไม่" ข้อ 14 แต่ "ใช่" ข้อ 15</li>
+    <li>ถ้าจะออกคำถามใหม่ 2 ข้อเพื่อแยกเอกซ์จากแกมมา จะถามอะไร (ต้นกำเนิด หรือความยาวคลื่นทั้งช่วงสั้นกว่าอะตอม)</li>
+  </ol></div>
+</section>
+
+</main>
+<script>
+"use strict";
+var WAVES=[
+ {k:"R",n:"คลื่นวิทยุ",g:"ผู้ส่งสารแห่งหุบเขาไกล",no:2},
+ {k:"M",n:"ไมโครเวฟ",g:"นักเต้นรำแห่งโมเลกุลน้ำ",no:6},
+ {k:"I",n:"อินฟราเรด",g:"เงาอุ่นแห่งราตรี",no:4},
+ {k:"V",n:"แสงที่ตามองเห็น",g:"เทพีแห่งรุ้ง",no:5},
+ {k:"U",n:"อัลตราไวโอเลต",g:"อัศวินเหนือสีม่วง",no:1},
+ {k:"X",n:"รังสีเอกซ์",g:"นักมองทะลุแห่งเงาและกระดูก",no:7},
+ {k:"G",n:"รังสีแกมมา",g:"ราชันแห่งหัวใจอะตอม",no:3}];
+// หมวด: A สมบัติร่วม B ความถี่/λ/พลังงาน C แหล่งกำเนิด D การประยุกต์ใช้ E ข้อมูลไม่เพียงพอ ; ลำดับคอลัมน์ = WAVES
+var Q=[
+["A","เป็นคลื่นตามขวาง","YYYYYYY"],
+["A","เดินทางผ่านสุญญากาศได้","YYYYYYY"],
+["A","ความเร็วในสุญญากาศเท่ากับ 3×10⁸ m/s","YYYYYYY"],
+["A","ทิศทางการเคลื่อนที่ถูกเบนในสนามแม่เหล็กหรือสนามไฟฟ้า","NNNNNNN"],
+["A","ความถี่เปลี่ยนไปเมื่อคลื่นผ่านเข้าสู่ตัวกลางใหม่","NNNNNNN"],
+["B","ความถี่ของคุณทั้งช่วงสูงกว่าแสงที่ตามองเห็น","NNNNYYY"],
+["B","ความยาวคลื่นของคุณทั้งช่วงยาวกว่าแสงที่ตามองเห็น","YYYNNNN"],
+["B","พลังงานต่อโฟตอนทั้งช่วงของคุณต่ำกว่าแสงที่ตามองเห็น","YYYNNNN"],
+["B","ความถี่ทั้งช่วงของคุณต่ำกว่า 3×10¹¹ Hz","YYNNNNN"],
+["B","ความยาวคลื่นทั้งช่วงของคุณยาวกว่า 1 เมตร","YNNNNNN"],
+["B","ความถี่ทั้งช่วงของคุณสูงกว่า 3×10¹⁶ Hz","NNNNNYY"],
+["B","ความยาวคลื่นบางส่วนของคุณสั้นกว่าขนาดอะตอม (ประมาณ 10⁻¹⁰ m)","NNNNNYY"],
+["B","ความยาวคลื่นทั้งช่วงของคุณสั้นกว่าขนาดอะตอม","NNNNNNY"],
+["B","พลังงานโฟตอนทุกส่วนในช่วงของคุณมากพอทำให้อะตอมหรือโมเลกุลในเนื้อเยื่อแตกตัวเป็นไอออน","NNNNNYY"],
+["B","พลังงานโฟตอนบางส่วนในช่วงของคุณมากพอทำให้อะตอมหรือโมเลกุลในเนื้อเยื่อแตกตัวเป็นไอออน","NNNNYYY"],
+["B","ความถี่สูงสุดในช่วงของคุณไม่ถึง 2 เท่าของความถี่ต่ำสุด","NNNYNNN"],
+["C","เกิดจากนิวเคลียสของอะตอม","NNNNNNY"],
+["C","เกิดจากวงจรอิเล็กทรอนิกส์และเสาอากาศเป็นหลัก","YYNNNNN"],
+["C","วัตถุอุณหภูมิห้อง (ประมาณ 300 K) แผ่ความเข้มสูงสุดต่อหน่วยความยาวคลื่นในช่วงของคุณ","NNYNNNN"],
+["C","ดวงอาทิตย์ (ผิวประมาณ 5,800 K) แผ่ความเข้มสูงสุดต่อหน่วยความยาวคลื่นในช่วงของคุณ","NNNYNNN"],
+["D","ส่งกระจายเสียงระบบ AM/FM","YNNNNNN"],
+["D","ใช้อุ่นอาหารในครัวเรือน โดยทำให้โมเลกุลน้ำในอาหารสั่นเร็วจากภายใน","NYNNNNN"],
+["D","ใช้ในเรดาร์ตรวจอากาศ (ตรวจกลุ่มฝน)","NYNNNNN"],
+["D","ใช้ในเครือข่าย Wi-Fi หรือการนำทางด้วยดาวเทียม (GPS)","NYNNNNN"],
+["D","ใช้ในรีโมตทีวีหรือแอร์แบบทั่วไปที่ต้องหันไปทางเครื่อง","NNYNNNN"],
+["D","ใช้ในกล้องถ่ายภาพความร้อนหรือเครื่องวัดไข้แบบไม่สัมผัส","NNYNNNN"],
+["D","ใช้ส่งข้อมูลอินเทอร์เน็ตระยะไกลในเส้นใยแก้วนำแสง","NNYNNNN"],
+["D","เป็นช่วงหลักที่พืชใช้สังเคราะห์ด้วยแสง","NNNYNNN"],
+["D","ใช้ส่องตรวจลายเรืองแสงซ่อนบนธนบัตรแท้","NNNNYNN"],
+["D","ช่วยให้ผิวหนังมนุษย์สร้างวิตามินดี","NNNNYNN"],
+["D","ใช้ถ่ายภาพกระดูกหักโดยฉายผ่านร่างกายแล้วดูเงา","NNNNNYN"],
+["D","ใช้รักษามะเร็งแบบรังสีรักษาที่ฉายจากภายนอกร่างกาย","NNNNNYY"],
+["D","ตรวจจับจากสารเภสัชรังสีที่ฉีดเข้าไปในร่างกาย (เช่น PET สแกนกระดูก)","NNNNNNY"],
+["D","ใช้ในเครื่องตรวจร่างกายที่ใช้สนามแม่เหล็กแรงสูงรูปทรงอุโมงค์","YNNNNNN"],
+["E","อันตรายต่อมนุษย์ไหม","UUUUUUU"],
+["E","เป็นคลื่นที่มีประโยชน์ที่สุด","UUUUUUU"]
+];
+var WHY={35:"ขึ้นกับความเข้ม เวลาสัมผัส และปริมาณที่ได้รับ",36:"เป็นความคิดเห็น วัดจากสมบัติของคลื่นไม่ได้"};
+var CATN={A:"A สมบัติร่วม",B:"B f · λ · E",C:"C แหล่งกำเนิด",D:"D ประยุกต์ใช้",E:"E ไม่เพียงพอ"};
+var LBL={Y:"ใช่",N:"ไม่ใช่",U:"ข้อมูลไม่เพียงพอ"};
+var $=function(i){return document.getElementById(i)};
+
+/* tabs */
+var TABS=[["s-rules","กติกา"],["s-oracle","ผู้พยากรณ์"],["s-play","จับเวลา/คะแนน"],["s-key","ตารางเฉลย"],["s-reveal","เฉลยและคำอธิบาย"]];
+(function(){
+  var nav=$("tabs");
+  TABS.forEach(function(t,i){
+    var b=document.createElement("button");b.textContent=t[1];b.setAttribute("role","tab");
+    b.onclick=function(){show(t[0])};b.dataset.id=t[0];nav.appendChild(b);
+  });
+  function show(id){
+    TABS.forEach(function(t){$(t[0]).classList.toggle("on",t[0]===id)});
+    Array.prototype.forEach.call(nav.children,function(b){b.setAttribute("aria-selected",b.dataset.id===id)});
+    window.scrollTo(0,0);
+  }
+  show("s-rules");
+})();
+
+/* answer key table */
+(function(){
+  var h="<tr><th>ข้อ</th><th>คำถาม</th>"+WAVES.slice().sort(function(a,b){return a.no-b.no}).map(function(w){return "<th>"+w.no+" "+w.n+"</th>"}).join("")+"</tr>";
+  var cat="";
+  Q.forEach(function(q,i){
+    if(q[0]!==cat){cat=q[0];h+='<tr><th colspan="9">หมวด '+CATN[cat]+"</th></tr>"}
+    var cells=WAVES.slice().sort(function(a,b){return a.no-b.no}).map(function(w){
+      var c=q[2][WAVES.indexOf(w)];return '<td class="c '+c+'">'+(c==="Y"?"ใช่":c==="N"?"ไม่":"ไม่พอ")+"</td>"});
+    h+="<tr><td>"+(i+1)+"</td><td>"+q[1]+"</td>"+cells.join("")+"</tr>";
+  });
+  $("keytable").innerHTML=h;
+})();
+
+/* reference + reveal */
+(function(){
+  var R=[["คลื่นวิทยุ","มากกว่า 1 m","น้อยกว่า 3×10⁸","น้อยกว่า 1.2 µeV"],
+   ["ไมโครเวฟ","1 mm – 1 m","3×10⁸ – 3×10¹¹","1.2 µeV – 1.2 meV"],
+   ["อินฟราเรด","700 nm – 1 mm","3×10¹¹ – 4.3×10¹⁴","1.2 meV – 1.8 eV"],
+   ["แสงที่ตามองเห็น","400 – 700 nm","4.3×10¹⁴ – 7.5×10¹⁴","1.8 – 3.1 eV"],
+   ["อัลตราไวโอเลต","10 – 400 nm","7.5×10¹⁴ – 3×10¹⁶","3.1 – 124 eV"],
+   ["รังสีเอกซ์","0.01 – 10 nm","3×10¹⁶ – 3×10¹⁹","124 eV – 124 keV"],
+   ["รังสีแกมมา","น้อยกว่า 0.01 nm","มากกว่า 3×10¹⁹","มากกว่า 124 keV"]];
+  $("reftable").innerHTML="<tr><th>ชนิด</th><th>ความยาวคลื่น</th><th>ความถี่ (Hz)</th><th>พลังงานต่อโฟตอน</th></tr>"+R.map(function(r){return "<tr>"+r.map(function(c){return "<td>"+c+"</td>"}).join("")+"</tr>"}).join("");
+  var REV={
+   U:["เกิดจากดวงอาทิตย์ หลอดแบล็กไลต์ และการเปลี่ยนระดับพลังงานของอิเล็กตรอน โฟตอนพลังงานสูงกว่าแสงที่ตามองเห็น ทำลาย DNA ผิวหนังได้","ตรวจลายธนบัตร ฆ่าเชื้อ (UV-C) สร้างวิตามินดี (UV-B)","UV ไม่ใช่ความร้อน และไม่ใช่ทุกส่วนที่ทำให้เกิดไอออนได้ เฉพาะช่วงพลังงานสูง UV-C ถูกโอโซนดูดกลืนไม่ถึงพื้นโลก"],
+   R:["เกิดจากอิเล็กตรอนที่สั่นในเสาอากาศและวงจร และจากแหล่งในอวกาศ ความยาวคลื่นยาวจึงเลี้ยวเบนรอบสิ่งกีดขวางได้ดี","กระจายเสียง AM/FM และเครื่องตรวจร่างกายด้วยสนามแม่เหล็ก (MRI)","คลื่นวิทยุไม่ใช่เสียง เสียงเป็นคลื่นกลที่ต้องมีตัวกลาง วิทยุแปลงสัญญาณเสียงไปบนคลื่นแม่เหล็กไฟฟ้าแล้วเครื่องรับแปลงกลับ"],
+   G:["เกิดจากนิวเคลียส เช่น การสลายตัวของธาตุกัมมันตรังสี พลังงานโฟตอนสูงที่สุดในสเปกตรัม","รังสีรักษามะเร็ง ฆ่าเชื้อเครื่องมือแพทย์ การตรวจด้วยสารเภสัชรังสี (PET)","แกมมากับเอกซ์แยกกันที่ต้นกำเนิด ไม่ใช่แค่พลังงาน การได้รับรังสีแกมมาจากภายนอกไม่ทำให้ร่างกายหรืออาหารกลายเป็นสารกัมมันตรังสี"],
+   I:["วัตถุทุกชิ้นแผ่คลื่นความร้อน ที่อุณหภูมิห้องแผ่เข้มสูงสุดราว 10 µm ตามกฎการเลื่อนของวีน","รีโมตทีวี กล้องถ่ายภาพความร้อน เส้นใยแก้วนำแสงระยะไกล","อินฟราเรดไม่ใช่ \"ความร้อน\" โดยตัวเอง ความร้อนคือพลังงานที่ถ่ายโอน คลื่นชนิดอื่นก็ทำให้วัตถุร้อนได้เมื่อถูกดูดกลืน"],
+   V:["ช่วงแคบมาก ความถี่สูงสุดไม่ถึง 2 เท่าของต่ำสุด สีแดงยาวสุด สีม่วงสั้นสุด ดวงอาทิตย์แผ่เข้มสูงสุดต่อหน่วยความยาวคลื่นในช่วงนี้","การมองเห็น การสังเคราะห์ด้วยแสง","เมื่อแสงเข้าสู่น้ำ ความถี่คงเดิม ความยาวคลื่นสั้นลงเพราะความเร็วลดลง แสงที่ตามองเห็นเป็นเพียงแถบเล็ก ๆ ของสเปกตรัม"],
+   M:["เกิดจากวงจรอิเล็กทรอนิกส์ เช่น แมกเนตรอนในเตาอบ และเป็นคลื่นพื้นหลังจักรวาล เตาอบใช้ราว 2.45 GHz (λ ประมาณ 12 cm)","อุ่นอาหาร เรดาร์ Wi-Fi GPS สื่อสารผ่านดาวเทียม","โฟตอนไมโครเวฟมีพลังงานต่ำมาก (ประมาณ 10⁻⁵ eV ที่ 2.45 GHz) ไม่ทำให้เกิดไอออน และอาหารไม่กลายเป็นสารกัมมันตรังสี ความร้อนมาจากโมเลกุลมีขั้วอย่างน้ำหมุนตามสนามไฟฟ้าที่กลับทิศ"],
+   X:["เกิดจากอิเล็กตรอนนอกนิวเคลียส เช่น อิเล็กตรอนเร็วชนเป้าโลหะ และการเปลี่ยนระดับพลังงานของอิเล็กตรอนชั้นใน","ถ่ายภาพกระดูก CT ตรวจกระเป๋าที่สนามบิน ศึกษาโครงสร้างผลึก รักษามะเร็ง","ภาพเกิดจากกระดูกดูดกลืนมากกว่าเนื้อเยื่ออ่อน จึงเกิดเงา ร่างกายไม่เก็บรังสีไว้หลังถ่ายภาพ"]
+  };
+  $("revcards").innerHTML=WAVES.slice().sort(function(a,b){return a.no-b.no}).map(function(w){
+    var r=REV[w.k];
+    return '<div class="card"><b style="color:var(--gold)">'+w.no+' · '+w.n+'</b> <span class="mute">('+w.g+')</span><p><b>กำเนิดและสมบัติ:</b> '+r[0]+'</p><p><b>ประยุกต์ใช้:</b> '+r[1]+'</p><p><b>แก้ความเข้าใจผิด:</b> '+r[2]+'</p></div>';
+  }).join("");
+})();
+
+/* oracle */
+(function(){
+  var cur=-1,selCat="ALL",shown=false,selQ=-1;
+  var cats=$("cats");
+  ["ALL"].concat(Object.keys(CATN)).forEach(function(c){
+    var b=document.createElement("button");b.className="chip"+(c==="ALL"?" on":"");b.textContent=c==="ALL"?"ทั้งหมด":CATN[c];
+    b.onclick=function(){selCat=c;Array.prototype.forEach.call(cats.children,function(x){x.classList.remove("on")});b.classList.add("on");render()};
+    cats.appendChild(b);
+  });
+  function render(){
+    $("qlist").innerHTML="";
+    Q.forEach(function(q,i){
+      if(selCat!=="ALL"&&q[0]!==selCat)return;
+      var b=document.createElement("button");b.className="qbtn"+(i===selQ?" sel":"");
+      b.innerHTML="<b>"+(i+1)+"</b>"+q[1];
+      b.onclick=function(){selQ=i;showAns();render()};
+      $("qlist").appendChild(b);
+    });
+  }
+  function showAns(){
+    var a=$("answer");
+    if(cur<0){a.className="big U";a.textContent="จับสลากก่อน";$("answerwhy").textContent="";return}
+    if(selQ<0){return}
+    var c=Q[selQ][2][cur];
+    a.className="big "+c;a.textContent=LBL[c];
+    $("answerwhy").textContent=(c==="U"&&WHY[selQ+1])?WHY[selQ+1]:"";
+  }
+  function info(){
+    var w=WAVES[cur];
+    $("cardinfo").innerHTML="สลากเลข <b>"+w.no+"</b> <span id='wn' class='"+(shown?"":"hidden")+"'>"+w.n+"</span>";
+  }
+  $("draw").onclick=function(){
+    cur=Math.floor(Math.random()*7);selQ=-1;shown=false;$("peek").disabled=false;
+    $("answer").className="big U";$("answer").textContent="แตะคำถามด้านล่าง";$("answerwhy").textContent="";info();render();
+  };
+  $("peek").onclick=function(){shown=!shown;info()};
+  render();
+})();
+
+/* play */
+(function(){
+  var secs=180,t=null,qn=0,gn=0,over=false;
+  var N=8;var sc=[];for(var i=0;i<N;i++)sc.push([0,0]);var round=0;
+  var team=$("team");for(i=0;i<N;i++){var o=document.createElement("option");o.value=i;o.textContent=i+1;team.appendChild(o)}
+  function pts(n){return n<=5?10:n<=8?7:5}
+  function clock(){var m=Math.floor(secs/60),s=secs%60;$("clock").textContent=m+":"+(s<10?"0":"")+s;$("clock").className="timer"+(secs<=30?" low":"")}
+  function draw(){
+    $("qn").textContent=qn;$("gn").textContent=gn;$("pv").textContent=pts(Math.max(qn,1));clock();
+    $("qp").disabled=qn>=10||over;$("qm").disabled=qn<=0;$("gok").disabled=over;$("gbad").disabled=over;
+    var h="<tr><th>ทีม</th><th>รอบ 1</th><th>รอบ 2</th><th>รวม</th></tr>";
+    sc.forEach(function(r,i){h+="<tr><td>"+(i+1)+"</td><td>"+r[0]+"</td><td>"+r[1]+"</td><td><b>"+(r[0]+r[1])+"</b></td></tr>"});
+    $("score").innerHTML=h;
+  }
+  function stop(){if(t){clearInterval(t);t=null}}
+  $("tstart").onclick=function(){if(t||secs<=0||over)return;t=setInterval(function(){secs--;if(secs<=0){secs=0;stop();over=true;$("rmsg").textContent="หมดเวลา 0 คะแนน ครูเฉลย"}draw()},1000)};
+  $("tpause").onclick=stop;
+  $("treset").onclick=function(){stop();secs=180;draw()};
+  $("qp").onclick=function(){if(qn<10)qn++;draw()};
+  $("qm").onclick=function(){if(qn>0)qn--;draw()};
+  $("gok").onclick=function(){
+    var r=sc[+team.value];var p=pts(Math.max(qn,1));r[Math.min(round,1)]+=p;
+    stop();over=true;$("rmsg").textContent="ทีม "+(+team.value+1)+" ได้ "+p+" คะแนน";draw();
+  };
+  $("gbad").onclick=function(){
+    gn++;if(gn>=2){stop();over=true;$("rmsg").textContent="ทายผิดครบ 2 ครั้ง 0 คะแนน ครูเฉลย"}draw();
+  };
+  $("rnew").onclick=function(){stop();secs=180;qn=0;gn=0;over=false;if(round<1)round++;$("rmsg").textContent="รอบ "+(round+1);draw()};
+  $("sreset").onclick=function(){if(!confirm("ล้างคะแนนทั้งหมด?"))return;sc=[];for(var i=0;i<N;i++)sc.push([0,0]);round=0;qn=0;gn=0;secs=180;over=false;stop();$("rmsg").textContent="";draw()};
+  draw();
+})();
+</script>
+</body>
+</html>
